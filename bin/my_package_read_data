@@ -1,0 +1,6 @@
+#!/usr/bin/python3
+
+from my_package.module_2 import load_data
+
+if __name__ == '__main__':
+    load_data()
