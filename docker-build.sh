@@ -15,11 +15,11 @@ if [[ $architecture == "arm64" ]]; then
   echo -e "* (arm64)"
   case $(sudo lshw -short | grep system) in
     *"Raspberry"*)
-      echo -n "* * (Raspberry)"
+      echo -e "* * (Raspberry)"
       dockerfile=docker/arm64/raspberry/Dockerfile
       ;;
     *"Jetson Nano"*)
-      echo -n "* * (Jetson Nano)"
+      echo -e "* * (Jetson Nano)"
       dockerfile=docker/arm64/jetsonano/Dockerfile
       ;;
   esac

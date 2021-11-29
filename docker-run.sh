@@ -18,12 +18,12 @@ if [[ $architecture == "arm64" ]]; then
   echo -e "* (arm64)"
   case $(sudo lshw -short | grep system) in
     *"Raspberry"*)
-      echo -n "* * (Raspberry)"
-      dockercmd="-it --rm --runtime nvidia --network host $DOCKER_IMAGE_NAME $*"
+      echo -e "* * (Raspberry)"
+      dockercmd="-it --rm --network host $DOCKER_IMAGE_NAME $*"
       ;;
     *"Jetson Nano"*)
-      echo -n "* * (Jetson Nano)"
-      dockercmd="-it --rm --network host $DOCKER_IMAGE_NAME $*"
+      echo -e "* * (Jetson Nano)"
+      dockercmd="-it --rm --runtime nvidia --network host $DOCKER_IMAGE_NAME $*"
       ;;
   esac
 fi
